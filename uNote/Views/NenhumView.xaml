@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="uNote.Views.NenhumView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Padding="30,50,30,30"
+    Background="#586875">
+
+    <VerticalStackLayout>
+        <Label
+            FontSize="32"
+            HorizontalTextAlignment="Center"
+            Text="ACCOUNTANCY NOTES PAGE"
+            TextColor="Black" />
+
+        <Button
+            Background="#98CCD3"
+            Clicked="BackButton_Clicked"
+            Text="Back"
+            TextColor="Black" />
+        <!--    -->
+    </VerticalStackLayout>
+
+</ContentPage>

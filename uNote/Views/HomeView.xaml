@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage
+    x:Class="uNote.Views.HomeView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    FlyoutLayoutBehavior="Popover">
+
+    <FlyoutPage.Flyout>
+        <ContentPage Title=" ">
+            <VerticalStackLayout>
+                <Label Text="test" TextColor="White" />
+            </VerticalStackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <ContentPage>
+                    <VerticalStackLayout Padding="30,50,30,30" Background="#586875">
+                        <Label
+                            FontSize="30"
+                            Text="Please log in"
+                            TextColor="#f6eddc" />
+
+                        <Label Text="Username" TextColor="#f6eddc" />
+
+                        <Border
+                            x:Name="UsernameBorder"
+                            Stroke="#CCCCCC"
+                            StrokeShape="8"
+                            StrokeThickness="2">
+                            <Entry
+                                x:Name="UsernameEntry"
+                                Focused="Username_Focused"
+                                Placeholder="Enter the Username"
+                                PlaceholderColor="#ffffff"
+                                TextColor="#ffffff" />
+                        </Border>
+
+                        <Label Text="Password" TextColor="#f6eddc" />
+
+                        <Border
+                            x:Name="PasswordBorder"
+                            Margin="0,0,0,10"
+                            Stroke="#CCCCCC"
+                            StrokeShape="8"
+                            StrokeThickness="2">
+                            <Entry
+                                x:Name="PasswordEntry"
+                                Focused="Password_Focused"
+                                IsPassword="True"
+                                Placeholder="Enter the Password"
+                                PlaceholderColor="#ffffff"
+                                TextColor="#ffffff" />
+                        </Border>
+
+                        <Button
+                            x:Name="LogInButton"
+                            BackgroundColor="#a5c8ca"
+                            Clicked="LoginButton_Clicked"
+                            Text="Log in" />
+                    </VerticalStackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+
+</FlyoutPage>
