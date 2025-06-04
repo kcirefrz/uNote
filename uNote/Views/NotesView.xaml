@@ -3,33 +3,114 @@
     x:Class="uNote.Views.NotesView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Background="Transparent"
     FlyoutLayoutBehavior="Popover"
     IsPresented="False">
 
+    <FlyoutPage.Resources>
+
+        <!--  DATA TEMPLATES  -->
+        <ResourceDictionary Source="/ResourceDictionaries/FlyoutOptionItem.xaml" />
+
+    </FlyoutPage.Resources>
+
+    <!--  FLYOUT  -->
     <FlyoutPage.Flyout>
-        <ContentPage Title="sfsf">
+        <ContentPage
+            Title=" "
+            Padding="8,16,8,16"
+            Background="#323232">
             <VerticalStackLayout>
-                <Label Text="sdfs" />
+                <Label
+                    Margin="0,0,0,16"
+                    FontSize="20"
+                    Text="User's uNote"
+                    TextColor="White" />
+
+                <Button
+                    Background="#98CCD3"
+                    Clicked="BackButton_Clicked"
+                    Text="Log out"
+                    TextColor="Black"
+                    VerticalOptions="End" />
             </VerticalStackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>
 
+    <!--  VIEW  -->
     <FlyoutPage.Detail>
-        <NavigationPage>
+        <NavigationPage BarBackground="#EBF0F6">
             <x:Arguments>
                 <ContentPage Background="#EBF0F6">
-                    <VerticalStackLayout Padding="30,50,30,30">
+
+                    <!--  MAIN CONTENT  -->
+                    <VerticalStackLayout Padding="30,0,30,30">
                         <Label
+                            Margin="0,0,0,50"
                             FontSize="32"
                             HorizontalTextAlignment="Center"
-                            Text="INSIDE THE FLYOUT"
+                            Text="GOOD AFTERNOON, USER"
                             TextColor="Black" />
 
-                        <Button
-                            Background="#98CCD3"
-                            Clicked="BackButton_Clicked"
-                            Text="Log out"
-                            TextColor="Black" />
+                        <!--  RECENT PAGES  -->
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Label
+                                Margin="0,0,0,16"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="Recent pages"
+                                TextColor="#A9A9A9" />
+
+                            <HorizontalStackLayout HorizontalOptions="Center">
+                                <Border
+                                    Margin="0,0,15,0"
+                                    HeightRequest="200"
+                                    Stroke="#A9A9A9"
+                                    StrokeShape="8"
+                                    StrokeThickness="2"
+                                    WidthRequest="150" />
+
+                                <Border
+                                    Margin="0,0,15,0"
+                                    HeightRequest="200"
+                                    Stroke="#A9A9A9"
+                                    StrokeShape="8"
+                                    StrokeThickness="2"
+                                    WidthRequest="150" />
+
+                                <Border
+                                    Margin="0,0,15,0"
+                                    HeightRequest="200"
+                                    Stroke="#A9A9A9"
+                                    StrokeShape="8"
+                                    StrokeThickness="2"
+                                    WidthRequest="150" />
+
+                                <Border
+                                    Margin="0,0,15,0"
+                                    HeightRequest="200"
+                                    Stroke="#A9A9A9"
+                                    StrokeShape="8"
+                                    StrokeThickness="2"
+                                    WidthRequest="150" />
+
+                                <Border
+                                    Margin="0,0,15,0"
+                                    HeightRequest="200"
+                                    Stroke="#A9A9A9"
+                                    StrokeShape="8"
+                                    StrokeThickness="2"
+                                    WidthRequest="150" />
+
+                                <Border
+                                    Margin="0,0,0,0"
+                                    HeightRequest="200"
+                                    Stroke="#A9A9A9"
+                                    StrokeShape="8"
+                                    StrokeThickness="2"
+                                    WidthRequest="150" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
                     </VerticalStackLayout>
                 </ContentPage>
             </x:Arguments>

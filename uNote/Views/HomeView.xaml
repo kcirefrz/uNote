@@ -5,31 +5,44 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     FlyoutLayoutBehavior="Popover">
 
+    <!--  FLYOUT  -->
     <FlyoutPage.Flyout>
-        <ContentPage Title=" ">
+        <ContentPage Title=" " Background="#323232">
             <VerticalStackLayout>
                 <Label Text="test" TextColor="White" />
             </VerticalStackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>
 
+    <!--  VIEW  -->
     <FlyoutPage.Detail>
-        <NavigationPage>
+        <NavigationPage BarBackground="#586875">
             <x:Arguments>
-                <ContentPage>
-                    <VerticalStackLayout Padding="30,50,30,30" Background="#586875">
+                <ContentPage Background="#586875">
+
+                    <!--  MAIN CONTENT  -->
+                    <VerticalStackLayout
+                        Margin="0,80,0,0"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start">
                         <Label
+                            Margin="0,0,0,16"
                             FontSize="30"
                             Text="Please log in"
                             TextColor="#f6eddc" />
 
-                        <Label Text="Username" TextColor="#f6eddc" />
+                        <!--  USERNAME ENTRY  -->
+                        <Label
+                            Margin="0,0,0,4"
+                            Text="Username"
+                            TextColor="#f6eddc" />
 
                         <Border
                             x:Name="UsernameBorder"
                             Stroke="#CCCCCC"
                             StrokeShape="8"
-                            StrokeThickness="2">
+                            StrokeThickness="2"
+                            WidthRequest="354">
                             <Entry
                                 x:Name="UsernameEntry"
                                 Focused="Username_Focused"
@@ -38,14 +51,19 @@
                                 TextColor="#ffffff" />
                         </Border>
 
-                        <Label Text="Password" TextColor="#f6eddc" />
+                        <!--  PASSWORD ENTRY  -->
+                        <Label
+                            Margin="0,0,0,4"
+                            Text="Password"
+                            TextColor="#f6eddc" />
 
                         <Border
                             x:Name="PasswordBorder"
-                            Margin="0,0,0,10"
+                            Margin="0,0,0,32"
                             Stroke="#CCCCCC"
                             StrokeShape="8"
-                            StrokeThickness="2">
+                            StrokeThickness="2"
+                            WidthRequest="354">
                             <Entry
                                 x:Name="PasswordEntry"
                                 Focused="Password_Focused"
@@ -55,11 +73,15 @@
                                 TextColor="#ffffff" />
                         </Border>
 
+                        <!--  LOG IN BUTTON  -->
                         <Button
                             x:Name="LogInButton"
                             BackgroundColor="#a5c8ca"
                             Clicked="LoginButton_Clicked"
-                            Text="Log in" />
+                            FontAttributes="Bold"
+                            FontSize="24"
+                            Text="Log in"
+                            TextColor="White" />
                     </VerticalStackLayout>
                 </ContentPage>
             </x:Arguments>

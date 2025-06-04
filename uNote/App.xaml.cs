@@ -7,6 +7,8 @@ public partial class App : Application
 	public App()
 	{
 		InitializeComponent();
+
+		Shell.SetNavBarIsVisible(this, false);
 	}
 
 	protected override Window CreateWindow(IActivationState? activationState)
