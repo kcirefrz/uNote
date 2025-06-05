@@ -1,18 +1,26 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using uNote.Models;
 
 namespace uNote;
 
-public class SimpleNoteViewModel : INotifyPropertyChanged
+public class NoteViewModel : INotifyPropertyChanged
 {
-    private ObservableCollection<Note> notes = new ObservableCollection<Note>();
+    private ObservableCollection<Note> notes;
+    private ObservableCollection<OptionItem> optionItems;
 
-    public SimpleNoteViewModel()
+    public NoteViewModel()
     {
         Notes = new ObservableCollection<Note>
         {
             new (0, "Estudar MAUI dia #01", "Estou criando as classes", new DateTime(), null),
             new (1, "Teste sem Description", string.Empty, new DateTime(), null),
+        };
+
+        OptionItems = new ObservableCollection<OptionItem>
+        {
+            new ("Private", true, null, null),
+            new ("Option Example 01", false, null, null),
         };
         // TEST PRA PEGAR DE ENUM (GetValues<TipoSerial>().ToList())
     }
@@ -29,6 +37,20 @@ public class SimpleNoteViewModel : INotifyPropertyChanged
             if (notes == value)
             {
                 return;
+                OnPropertyChanged(nameof(Notes));
+            }
+        }
+    }
+
+    public ObservableCollection<OptionItem> OptionItems
+    {
+        get => optionItems;
+        set
+        {
+            if (optionItems == value)
+            {
+                return;
+                OnPropertyChanged(nameof(OptionItems));
             }
         }
     }

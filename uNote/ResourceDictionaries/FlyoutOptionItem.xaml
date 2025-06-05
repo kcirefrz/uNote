@@ -2,9 +2,18 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:uNote.Models">
+    xmlns:local="clr-namespace:uNote.Models"
+    xmlns:templateSelector="clr-namespace:uNote.TemplateSelector">
 
-    <DataTemplate x:Key="test1" x:DataType="local:OptionItem">
+    <!--  TEMPLATE SELECTOR  -->
+    <templateSelector:OptionTemplateSelector
+        x:Key="OptionTemplateSelector"
+        SimpleMenuItemTemplate="{StaticResource SimpleMenuItem}"
+        TitleMenuItemTemplate="{StaticResource TitleMenuItem}" />
+
+    <!--  DATA TEMPLATES  -->
+    <!--  SIMPLE MENU ITEM  -->
+    <DataTemplate x:Key="SimpleMenuItem" x:DataType="local:OptionItem">
         <ViewCell>
             <Grid ColumnDefinitions="250" RowDefinitions="50">
                 <Button
@@ -12,22 +21,25 @@
                     HorizontalOptions="Fill"
                     VerticalOptions="Fill" />
 
-                <HorizontalStackLayout HorizontalOptions="Fill">
-                    <Image Margin="0,0,15,0" />
+                <Grid ColumnDefinitions="30,220" HorizontalOptions="Fill">
+                    <Path Data="{Binding OptionIcon}" />
 
-                    <Label Text="Item 01" TextColor="White" />
-                </HorizontalStackLayout>
+                    <Image Margin="0,0,0,0" Source="{Binding OptionImage}" />
+
+                    <Label
+                        Grid.Column="1"
+                        Text="{Binding OptionName}"
+                        TextColor="White" />
+                </Grid>
             </Grid>
         </ViewCell>
     </DataTemplate>
 
-    <DataTemplate x:Key="test2" x:DataType="local:OptionItem">
+    <!--  TITLE ITEM  -->
+    <DataTemplate x:Key="TitleMenuItem" x:DataType="local:OptionItem">
         <ViewCell>
             <HorizontalStackLayout>
-                <!--  HorizontalOptions="FillAndExpand"  -->
-                <Image Margin="0,0,15,0" />
-
-                <Label Text="Item 01" TextColor="White" />
+                <Label Text="{Binding OptionName}" TextColor="White" />
             </HorizontalStackLayout>
         </ViewCell>
     </DataTemplate>

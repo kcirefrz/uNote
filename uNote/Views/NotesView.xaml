@@ -6,6 +6,7 @@
     Background="Transparent"
     FlyoutLayoutBehavior="Popover"
     IsPresented="False">
+    <!--  xmlns:vm="clr-namespace:uNote.ViewModels"  -->
 
     <FlyoutPage.Resources>
 
@@ -21,11 +22,16 @@
             Padding="8,16,8,16"
             Background="#323232">
             <VerticalStackLayout>
+
+                <!--  CRIAR CONTROL PRA RECEBER OS ITENS  -->
+                <!--  OU VER COMO FUNCIONA OS TABITEMS DO PROPRIO COISO AQ  -->
                 <Label
                     Margin="0,0,0,16"
                     FontSize="20"
                     Text="User's uNote"
                     TextColor="White" />
+
+                <ListView x:Name="listView" ItemTemplate="{StaticResource OptionTemplateSelector}" />
 
                 <Button
                     Background="#98CCD3"
