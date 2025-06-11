@@ -6,6 +6,6 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 
-		Shell.SetNavBarIsVisible(this, false);
+		SetNavBarIsVisible(this, false);
 	}
 }

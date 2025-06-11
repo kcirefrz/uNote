@@ -3,10 +3,12 @@
     x:Class="uNote.Views.NotesView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Background="Transparent"
+    xmlns:vm="clr-namespace:uNote.ViewModels"
+    Background="#EBF0F6"
+    x:DataType="vm:NotesViewModel"
     FlyoutLayoutBehavior="Popover"
-    IsPresented="False">
-    <!--  xmlns:vm="clr-namespace:uNote.ViewModels"  -->
+    IsPresented="False"
+    Shell.NavBarIsVisible="False">
 
     <FlyoutPage.Resources>
 
@@ -15,39 +17,28 @@
 
     </FlyoutPage.Resources>
 
-    <!--  FLYOUT  -->
     <FlyoutPage.Flyout>
-        <ContentPage
-            Title=" "
-            Padding="8,16,8,16"
-            Background="#323232">
-            <VerticalStackLayout>
-
-                <!--  CRIAR CONTROL PRA RECEBER OS ITENS  -->
-                <!--  OU VER COMO FUNCIONA OS TABITEMS DO PROPRIO COISO AQ  -->
-                <Label
-                    Margin="0,0,0,16"
-                    FontSize="20"
-                    Text="User's uNote"
-                    TextColor="White" />
-
-                <ListView x:Name="listView" ItemTemplate="{StaticResource OptionTemplateSelector}" />
+        <ContentPage Title=" " Background="#323232">
+            <StackLayout Padding="8,8,8,0" Orientation="Vertical">
+                <Label Margin="0,0,0,15" Text="User's uNote" />
 
                 <Button
                     Background="#98CCD3"
                     Clicked="BackButton_Clicked"
-                    Text="Log out"
-                    TextColor="Black"
-                    VerticalOptions="End" />
-            </VerticalStackLayout>
+                    CornerRadius="8"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HeightRequest="50"
+                    Text="Log Out"
+                    WidthRequest="250" />
+            </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>
 
-    <!--  VIEW  -->
     <FlyoutPage.Detail>
-        <NavigationPage BarBackground="#EBF0F6">
+        <NavigationPage Title=" " BarBackgroundColor="#EBF0F6">
             <x:Arguments>
-                <ContentPage Background="#EBF0F6">
+                <ContentPage Title="" Background="#EBF0F6">
 
                     <!--  MAIN CONTENT  -->
                     <VerticalStackLayout Padding="30,0,30,30">

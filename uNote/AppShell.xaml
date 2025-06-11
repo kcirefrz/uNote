@@ -4,10 +4,12 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:uNote.Views"
-    Title="uNote">
+    Title="uNote"
+    FlyoutBackground="#323232">
 
-    <ShellContent ContentTemplate="{DataTemplate views:HomeView}" Route="HomeView" />
-
-    <ShellContent ContentTemplate="{DataTemplate views:NenhumView}" Route="Nenhum" />
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:HomeView}"
+        Route="HomeView" />
 
 </Shell>

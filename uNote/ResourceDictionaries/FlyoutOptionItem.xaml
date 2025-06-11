@@ -13,7 +13,7 @@
 
     <!--  DATA TEMPLATES  -->
     <!--  SIMPLE MENU ITEM  -->
-    <DataTemplate x:Key="SimpleMenuItem" x:DataType="local:OptionItem">
+    <DataTemplate x:Key="SimpleMenuItem">
         <ViewCell>
             <Grid ColumnDefinitions="250" RowDefinitions="50">
                 <Button
@@ -36,7 +36,7 @@
     </DataTemplate>
 
     <!--  TITLE ITEM  -->
-    <DataTemplate x:Key="TitleMenuItem" x:DataType="local:OptionItem">
+    <DataTemplate x:Key="TitleMenuItem">
         <ViewCell>
             <HorizontalStackLayout>
                 <Label Text="{Binding OptionName}" TextColor="White" />

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="uNote.Views.NotePageView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Padding="30,50,30,30"
+    Title=""
+    Background="#EBF0F6">
+
+    <StackLayout Orientation="Vertical">
+
+        <!--  HEADER  -->
+        <Border>
+            <StackLayout x:Name="Header" Orientation="Horizontal">
+                <!--    -->
+            </StackLayout>
+        </Border>
+
+        <!--  TITLE  -->
+        <Entry
+            x:Name="PageTitle"
+            Margin="0,0,0,32"
+            FontAttributes="Bold"
+            FontSize="32"
+            TextColor="Black" />
+
+        <Entry x:Name="PageContent" FontSize="16" />
+    </StackLayout>
+
+</ContentPage>

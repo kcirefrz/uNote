@@ -1,91 +1,89 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<FlyoutPage
+<ContentPage
     x:Class="uNote.Views.HomeView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    FlyoutLayoutBehavior="Popover">
+    xmlns:vm="clr-namespace:uNote.ViewModels"
+    Background="#586875"
+    x:DataType="vm:HomeViewModel"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
 
-    <!--  FLYOUT  -->
-    <FlyoutPage.Flyout>
-        <ContentPage Title=" " Background="#323232">
-            <VerticalStackLayout>
-                <Label Text="test" TextColor="White" />
-            </VerticalStackLayout>
-        </ContentPage>
-    </FlyoutPage.Flyout>
+    <!--  MAIN CONTENT  -->
+    <VerticalStackLayout
+        Margin="0,80,0,0"
+        HorizontalOptions="Center"
+        VerticalOptions="Start">
+        <Label
+            Margin="0,0,0,16"
+            FontSize="30"
+            Text="Please log in"
+            TextColor="#f6eddc" />
 
-    <!--  VIEW  -->
-    <FlyoutPage.Detail>
-        <NavigationPage BarBackground="#586875">
-            <x:Arguments>
-                <ContentPage Background="#586875">
+        <!--  USERNAME ENTRY  -->
+        <Label
+            Margin="0,0,0,4"
+            Text="Username"
+            TextColor="#f6eddc" />
 
-                    <!--  MAIN CONTENT  -->
-                    <VerticalStackLayout
-                        Margin="0,80,0,0"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Start">
-                        <Label
-                            Margin="0,0,0,16"
-                            FontSize="30"
-                            Text="Please log in"
-                            TextColor="#f6eddc" />
+        <Border
+            x:Name="UsernameBorder"
+            Stroke="#CCCCCC"
+            StrokeShape="8"
+            StrokeThickness="2"
+            WidthRequest="354">
+            <Entry
+                x:Name="UsernameEntry"
+                Focused="Username_Focused"
+                Text="{Binding Username}"
+                Placeholder="Enter the Username"
+                PlaceholderColor="#ffffff"
+                TextColor="#ffffff" />
+        </Border>
 
-                        <!--  USERNAME ENTRY  -->
-                        <Label
-                            Margin="0,0,0,4"
-                            Text="Username"
-                            TextColor="#f6eddc" />
+        <!--  PASSWORD ENTRY  -->
+        <Label
+            Margin="0,0,0,4"
+            Text="Password"
+            TextColor="#f6eddc" />
 
-                        <Border
-                            x:Name="UsernameBorder"
-                            Stroke="#CCCCCC"
-                            StrokeShape="8"
-                            StrokeThickness="2"
-                            WidthRequest="354">
-                            <Entry
-                                x:Name="UsernameEntry"
-                                Focused="Username_Focused"
-                                Placeholder="Enter the Username"
-                                PlaceholderColor="#ffffff"
-                                TextColor="#ffffff" />
-                        </Border>
+        <Border
+            x:Name="PasswordBorder"
+            Margin="0,0,0,32"
+            Stroke="#CCCCCC"
+            StrokeShape="8"
+            StrokeThickness="2"
+            WidthRequest="354">
+            <Entry
+                x:Name="PasswordEntry"
+                Focused="Password_Focused"
+                Text="{Binding Password}"
+                IsPassword="True"
+                Placeholder="Enter the Password"
+                PlaceholderColor="#ffffff"
+                TextColor="#ffffff" />
+        </Border>
 
-                        <!--  PASSWORD ENTRY  -->
-                        <Label
-                            Margin="0,0,0,4"
-                            Text="Password"
-                            TextColor="#f6eddc" />
+        <!--  LOG IN BUTTON  -->
+        <Button
+            x:Name="LogInButton"
+            BackgroundColor="#98CCD3"
+            Margin="0,0,0,16"
+            Clicked="LoginButton_Clicked"
+            FontAttributes="Bold"
+            FontSize="24"
+            Text="Log in"
+            TextColor="White" />
 
-                        <Border
-                            x:Name="PasswordBorder"
-                            Margin="0,0,0,32"
-                            Stroke="#CCCCCC"
-                            StrokeShape="8"
-                            StrokeThickness="2"
-                            WidthRequest="354">
-                            <Entry
-                                x:Name="PasswordEntry"
-                                Focused="Password_Focused"
-                                IsPassword="True"
-                                Placeholder="Enter the Password"
-                                PlaceholderColor="#ffffff"
-                                TextColor="#ffffff" />
-                        </Border>
-
-                        <!--  LOG IN BUTTON  -->
-                        <Button
-                            x:Name="LogInButton"
-                            BackgroundColor="#a5c8ca"
-                            Clicked="LoginButton_Clicked"
-                            FontAttributes="Bold"
-                            FontSize="24"
-                            Text="Log in"
-                            TextColor="White" />
-                    </VerticalStackLayout>
-                </ContentPage>
-            </x:Arguments>
-        </NavigationPage>
-    </FlyoutPage.Detail>
-
-</FlyoutPage>
+             <!--  LOG IN BUTTON  -->
+        <Button
+            x:Name="RegisterButton"
+            BackgroundColor="#132238"
+            Clicked="RegisterButton_Clicked"
+            FontAttributes="Bold"
+            FontSize="24"
+            Text="Register"
+            TextColor="White" />
+    </VerticalStackLayout>
+    
+</ContentPage>

@@ -1,18 +1,15 @@
-﻿using uNote.Views;
+﻿using uNote.Interfaces;
+using uNote.Views;
 
 namespace uNote;
 
 public partial class App : Application
 {
-	public App()
+	public App(INoteService service)
 	{
 		InitializeComponent();
+		MainPage = new NavigationPage(new HomeView(service));
 
 		Shell.SetNavBarIsVisible(this, false);
-	}
-
-	protected override Window CreateWindow(IActivationState? activationState)
-	{
-		return new Window(new HomeView());
 	}
 }

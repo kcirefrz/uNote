@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="uNote.Views.RegisterView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:uNote.ViewModels"
+    Title=" "
+    Padding="30,50,30,30"
+    x:DataType="vm:RegisterViewModel"
+    Background="#586875">
+
+    <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+
+        <!--  USERNAME  -->
+        <Label
+            FontAttributes="Bold"
+            FontSize="24"
+            Text="Create new Username"
+            TextColor="#f6eddc" />
+
+        <Border
+            x:Name="UsernameBorder"
+            Stroke="#CCCCCC"
+            StrokeShape="8"
+            StrokeThickness="2"
+            WidthRequest="354">
+            <Entry
+                x:Name="UsernameEntry"
+                Focused="Username_Focused"
+                Placeholder="Enter the Username"
+                PlaceholderColor="#ffffff"
+                Text="{Binding Username}"
+                TextColor="#ffffff" />
+        </Border>
+
+        <!--  EMAIL  -->
+        <Label
+            FontAttributes="Bold"
+            FontSize="24"
+            Text="Enter E-mail"
+            TextColor="#f6eddc" />
+
+        <Border
+            x:Name="EmailBorder"
+            Stroke="#CCCCCC"
+            StrokeShape="8"
+            StrokeThickness="2"
+            WidthRequest="354">
+            <Entry
+                x:Name="EmailEntry"
+                Focused="Email_Focused"
+                Placeholder="Enter the Email"
+                PlaceholderColor="#ffffff"
+                Text="{Binding Email}"
+                TextColor="#ffffff" />
+        </Border>
+
+        <!--  PASSWORD  -->
+        <Label
+            FontAttributes="Bold"
+            FontSize="24"
+            Text="Create new Password"
+            TextColor="#f6eddc" />
+
+        <Border
+            x:Name="PasswordBorder"
+            Margin="0,0,0,32"
+            Stroke="#CCCCCC"
+            StrokeShape="8"
+            StrokeThickness="2"
+            WidthRequest="354">
+            <Entry
+                x:Name="PasswordEntry"
+                Focused="Password_Focused"
+                IsPassword="True"
+                Placeholder="Enter the Username"
+                PlaceholderColor="#ffffff"
+                Text="{Binding Password}"
+                TextColor="#ffffff" />
+        </Border>
+
+        <!--  REGISTER BUTTON  -->
+        <Button
+            Command="{Binding SaveUserCommand}"
+            FontAttributes="Bold"
+            Text="Register"
+            TextColor="Black" />
+
+        <!--  CRIAR COMANDO PARA VER SE O USUARIO TA NA TABLE  -->
+        <Button
+            Margin="0,16,0,0"
+            Command="{Binding FindUserCommand}"
+            FontAttributes="Bold"
+            Text="Find Users"
+            TextColor="Black" />
+
+    </StackLayout>
+
+</ContentPage>

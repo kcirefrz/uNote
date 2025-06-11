@@ -10,13 +10,13 @@ public class OptionTemplateSelector : DataTemplateSelector
 
     protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
     {
-        if (item != null && item is OptionItem optionItem)
-        {
-            if (optionItem.IsTitle)
-            {
-                return TitleMenuItemTemplate;
-            }
-        }
+        // if (item != null && item is OptionItem optionItem)
+        // {
+        //     if (optionItem.IsTitle)
+        //     {
+        //         return TitleMenuItemTemplate;
+        //     }
+        // }
         return SimpleMenuItemTemplate;
     }
 }
