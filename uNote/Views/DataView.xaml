@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="uNote.Views.DataView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:uNote.ViewModels"
+    x:DataType="vm:RegisterViewModel"
+    Background="#586875"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <VerticalStackLayout>
+
+        <CollectionView
+            HeightRequest="520"
+            ItemsSource="{Binding Users}"
+            SelectionMode="Single"
+            WidthRequest="200">
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label
+                            FontSize="20"
+                            Text="{Binding Username}"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button
+            Margin="0,0,0,10"
+            Background="#98CCD3"
+            Clicked="BackButton_Clicked"
+            CornerRadius="8"
+            FontAttributes="Bold"
+            FontSize="20"
+            HeightRequest="50"
+            Text="Back"
+            WidthRequest="250" />
+
+        <Button
+            Background="#98CCD3"
+            Command="{Binding DisplayUsersCommand}"
+            CornerRadius="8"
+            FontAttributes="Bold"
+            FontSize="20"
+            HeightRequest="50"
+            Text="Display Users"
+            WidthRequest="250" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

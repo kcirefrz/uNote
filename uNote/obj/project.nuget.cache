@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6/DRpVcYyJ4=",
+  "dgSpecHash": "t2ter9zoW/U=",
   "success": true,
   "projectFilePath": "C:\\Github\\uNote\\uNote\\uNote.csproj",
   "expectedPackageFiles": [
@@ -28,7 +28,7 @@
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.maui.graphics\\9.0.70\\microsoft.maui.graphics.9.0.70.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\9.0.70\\microsoft.maui.graphics.win2d.winui.desktop.9.0.70.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.70\\microsoft.maui.resizetizer.9.0.70.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.0\\microsoft.net.illink.tasks.9.0.0.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.6\\microsoft.net.illink.tasks.9.0.6.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\microsoft.web.webview2.1.0.3179.45.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250401001\\microsoft.windowsappsdk.1.7.250401001.nupkg.sha512",
@@ -135,10 +135,7 @@
     "C:\\Users\\Usuario\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.9.0.2\\xamarin.kotlinx.coroutines.core.jvm.1.9.0.2.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\xamarin.kotlinx.serialization.core\\1.7.3.2\\xamarin.kotlinx.serialization.core.1.7.3.2.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\xamarin.kotlinx.serialization.core.jvm\\1.7.3.2\\xamarin.kotlinx.serialization.core.jvm.1.7.3.2.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.6\\microsoft.netcore.app.ref.9.0.6.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.6\\microsoft.netcore.app.ref.9.0.6.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.6\\microsoft.netcore.app.ref.9.0.6.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.54\\microsoft.windows.sdk.net.ref.10.0.19041.54.nupkg.sha512"
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
   ],
   "logs": []
 }

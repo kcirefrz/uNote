@@ -37,6 +37,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<NotesView>();
 		builder.Services.AddTransient<NotePageView>();
 		builder.Services.AddTransient<RegisterView>();
+		builder.Services.AddTransient<DataView>();
 
 		// VIEWMODELS
 		builder.Services.AddSingleton<HomeViewModel>();

@@ -52,6 +52,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = uNote.Resources.Styles.Sty
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[C:/Github/uNote/uNote/Views/DataView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = uNote.Views.DataView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DataView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DataView.xaml
+
 [C:/Github/uNote/uNote/Views/HomeView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = uNote.Views.HomeView.xaml

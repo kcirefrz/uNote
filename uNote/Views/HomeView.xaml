@@ -4,8 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:uNote.ViewModels"
-    Background="#586875"
     x:DataType="vm:HomeViewModel"
+    Background="#586875"
     Shell.NavBarIsVisible="False"
     Shell.TabBarIsVisible="False">
 
@@ -35,9 +35,9 @@
             <Entry
                 x:Name="UsernameEntry"
                 Focused="Username_Focused"
-                Text="{Binding Username}"
                 Placeholder="Enter the Username"
                 PlaceholderColor="#ffffff"
+                Text="{Binding Username}"
                 TextColor="#ffffff" />
         </Border>
 
@@ -57,25 +57,25 @@
             <Entry
                 x:Name="PasswordEntry"
                 Focused="Password_Focused"
-                Text="{Binding Password}"
                 IsPassword="True"
                 Placeholder="Enter the Password"
                 PlaceholderColor="#ffffff"
+                Text="{Binding Password}"
                 TextColor="#ffffff" />
         </Border>
 
         <!--  LOG IN BUTTON  -->
         <Button
             x:Name="LogInButton"
-            BackgroundColor="#98CCD3"
             Margin="0,0,0,16"
+            BackgroundColor="#98CCD3"
             Clicked="LoginButton_Clicked"
             FontAttributes="Bold"
             FontSize="24"
             Text="Log in"
             TextColor="White" />
 
-             <!--  LOG IN BUTTON  -->
+        <!--  LOG IN BUTTON  -->
         <Button
             x:Name="RegisterButton"
             BackgroundColor="#132238"
@@ -85,5 +85,5 @@
             Text="Register"
             TextColor="White" />
     </VerticalStackLayout>
-    
+
 </ContentPage>

@@ -12,7 +12,7 @@ public partial class RegisterView : ContentPage
     {
         InitializeComponent();
         this.service = service;
-        
+
         BindingContext = new RegisterViewModel(service);
     }
 
@@ -35,6 +35,23 @@ public partial class RegisterView : ContentPage
         UsernameBorder.Stroke = Color.FromArgb("#CCCCCC");
         EmailBorder.Stroke = Color.FromArgb("#CCCCCC");
         PasswordBorder.Stroke = Color.FromArgb("#bdd6d2");
+    }
+
+    private async void ViewUsersButton_Clicked(object sender, EventArgs e)
+    {
+        var dataView = Handler.MauiContext.Services.GetService<DataView>();
+        await Navigation.PushModalAsync(dataView);
+    }
+
+    private void BackButton_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PopModalAsync();
+    }
+
+    private async void FindUsersButton_Clicked(object sender, EventArgs e)
+    {
+        var findUsersView = Handler.MauiContext.Services.GetService<DataView>();
+        await Navigation.PushModalAsync(findUsersView);
     }
 
     private async void SaveButton_Clicked(object? sender, EventArgs e)

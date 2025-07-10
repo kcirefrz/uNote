@@ -86,13 +86,37 @@
             Text="Register"
             TextColor="Black" />
 
-        <!--  CRIAR COMANDO PARA VER SE O USUARIO TA NA TABLE  -->
         <Button
             Margin="0,16,0,0"
-            Command="{Binding FindUserCommand}"
+            FontAttributes="Bold"
+            Text="Back"
+            Clicked="BackButton_Clicked"
+            TextColor="Black" />
+
+             <Button
+            Margin="0,16,0,0"
             FontAttributes="Bold"
             Text="Find Users"
+            Clicked="FindUsersButton_Clicked"
             TextColor="Black" />
+
+        <CollectionView
+            HeightRequest="520"
+            ItemsSource="{Binding Users}"
+            SelectionMode="Single"
+            WidthRequest="200">
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label
+                            FontSize="20"
+                            Text="{Binding Username}"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
     </StackLayout>
 

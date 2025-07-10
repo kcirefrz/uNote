@@ -20,8 +20,8 @@ public class NotesViewModel : INotifyPropertyChanged
         this.noteService = noteService;
         this.userService = userService;
 
-        Notes = new ObservableCollection<NoteItem>();
-        Users = new ObservableCollection<User>();
+        // Notes = new ObservableCollection<NoteItem>();
+        // Users = new ObservableCollection<User>();
 
         // SE NAO TIVER NADA NAS TABELAS, DEIXA COMENTADO PARA NAO ESTOURAR EXCEÇÃO
         // NAO EH BOM FICAR LENDO TODOS OS DADOS DEPENDENDO DA QUANTIDADE DE DADOS
@@ -131,7 +131,7 @@ public class NotesViewModel : INotifyPropertyChanged
         if (SelectedNote == null) return;
 
         await noteService.SaveNoteAsync(SelectedNote);
-        TaskLoadNotes(noteService);
+        await TaskLoadNotes(noteService);
         SelectedNote = null;
     }
 
@@ -140,7 +140,7 @@ public class NotesViewModel : INotifyPropertyChanged
         if (SelectedUser == null) return;
 
         await userService.SaveUserAsync(SelectedUser);
-        TaskLoadUsers(userService);
+        await TaskLoadUsers(userService);
         SelectedUser = null;
     }
 

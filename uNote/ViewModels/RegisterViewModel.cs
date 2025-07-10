@@ -8,34 +8,41 @@ namespace uNote.ViewModels;
 public class RegisterViewModel : INotifyPropertyChanged
 {
     private IUserService service;
-    private string username;
+    private string user;
     private string email;
     private string password;
+    private List<User> users;
 
     public RegisterViewModel(IUserService service)
     {
         this.service = service;
 
         SaveUserCommand = new Command(SaveUser);
+        DisplayUsersCommand = new Command(DisplayUsers);
         // DeleteUserCommand = new Command(DeleteUser);
+
+        Users = new List<User>();
+        service.GetAllUsersAsync();
     }
 
     public ICommand SaveUserCommand { get; set; }
-    
+
     public ICommand DeleteUserCommand { get; set; }
 
-    public string Username
+    public ICommand DisplayUsersCommand { get; set; }
+
+    public string User
     {
-        get => username;
+        get => user;
         set
         {
-            if (username == value)
+            if (user == value)
             {
                 return;
             }
 
-            username = value;
-            OnPropertyChanged(nameof(Username));
+            user = value;
+            OnPropertyChanged(nameof(User));
         }
     }
 
@@ -69,6 +76,21 @@ public class RegisterViewModel : INotifyPropertyChanged
         }
     }
 
+    public List<User> Users
+    {
+        get => users;
+        set
+        {
+            if (users == value)
+            {
+                return;
+            }
+
+            users = value;
+            OnPropertyChanged(nameof(Users));
+        }
+    }
+
 #pragma warning disable CS0108 // O membro oculta o membro herdado; nova palavra-chave ausente
     public event PropertyChangedEventHandler? PropertyChanged;
 #pragma warning restore CS0108 // O membro oculta o membro herdado; nova palavra-chave ausente
@@ -84,12 +106,12 @@ public class RegisterViewModel : INotifyPropertyChanged
 
         await service.SaveUserAsync(new User
         {
-            Username = Username,
+            Username = User,
             Email = Email,
             Password = Password,
         });
 
-        Console.WriteLine("Test passed.");
+        await Refresh(service);
     }
 
     private async void DeleteUser(User user)
@@ -109,5 +131,17 @@ public class RegisterViewModel : INotifyPropertyChanged
                 await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
             }
         }
+    }
+
+    private async void DisplayUsers()
+    {
+        await service.Initialize();
+
+        await Refresh(service);
+    }
+
+    private async Task Refresh(IUserService service)
+    {
+        Users = await service.GetAllUsersAsync();
     }
 }
